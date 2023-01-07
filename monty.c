@@ -48,7 +48,7 @@ int main(int argc, char **argv)
 
 	while (argument != -1)
 	{
-		buff = strtok(buffer, " \n");
+		buff = strtok(buffer, " \t\n");
 		if (!buff)
 			break;
 
