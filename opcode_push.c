@@ -27,7 +27,7 @@ void push(stack_t **stack, unsigned int line_number)
 	}
 
 	n = atoi(buffer);
-	if (_strspn(buffer, "123456789") != _strlen(buffer))
+	if (_strspn(buffer, "1234567890-") != _strlen(buffer))
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
