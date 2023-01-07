@@ -58,7 +58,6 @@ int main(int argc, char **argv)
 		continue;
 	}
 	free(buffer);
-	free(argument);
 	fclose(file);
 	return (EXIT_SUCCESS);
 }
