@@ -19,6 +19,4 @@ void pall(stack_t **stack, unsigned int line_number)
 			node = node->next;
 		}
 	}
-	else
-		free(node);
 }

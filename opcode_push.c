@@ -47,9 +47,5 @@ void push(stack_t **stack, unsigned int line_number)
 
 	if (*stack != NULL)
 		(*stack)->prev = n_node;
-	
-	else
-		free(buffer);
-	
 	*stack = n_node;
 }
