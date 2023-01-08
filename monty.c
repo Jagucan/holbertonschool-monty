@@ -61,26 +61,6 @@ int main(int argc, char **argv)
 	}
 	free(buffer);
 	fclose(file);
-	_free(stack);
+	_free(&stack);
 	return (argument);
-}
-
-/**
- * _free - free the stack
- * @stack: Is a pointer to stack.
-*/
-
-void _free(stack_t *stack)
-{
-	stack_t *aux;
-
-	if (!stack)
-		return;
-
-	while (stack)
-	{
-		aux = stack->next;
-		free(stack);
-		stack = aux;
-	}
 }
