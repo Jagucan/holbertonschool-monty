@@ -5,8 +5,7 @@
  *@argc: Is the number of arguments.
  *@argv: Is the arguments.
  *Return: Return int.
- */
-
+*/
 int main(int argc, char **argv)
 {
 	FILE *file;
