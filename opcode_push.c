@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- * 
- * 
- * 
+ * push - Pushes an element to the stack.
+ * @stack: Is a pointer to stack.
+ * @line_number: Is the number of line.
 */
 
 void push(stack_t **stack, unsigned int line_number)
@@ -27,7 +27,7 @@ void push(stack_t **stack, unsigned int line_number)
 	}
 
 	n = atoi(buffer);
-	if (_strspn(buffer, "1234567890-") != _strlen(buffer))
+	if (_strspn(buffer, "0123456789+-") != _strlen(buffer))
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
@@ -36,7 +36,6 @@ void push(stack_t **stack, unsigned int line_number)
 	n_node = (stack_t *) malloc(sizeof(stack_t));
 	if (!n_node)
 	{
-		free(buffer);
 		fprintf(stderr, "Error: malloc failed");
 		exit(EXIT_FAILURE);
 	}
@@ -45,7 +44,10 @@ void push(stack_t **stack, unsigned int line_number)
 	n_node->prev = NULL;
 	n_node->next = *stack;
 
-	if (*stack != NULL)
+	if (*stack)
+	{
 		(*stack)->prev = n_node;
+		n_node->next = *stack;
+	}
 	*stack = n_node;
 }

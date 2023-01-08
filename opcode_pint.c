@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- * inicio de la pila
- * 
- * 
+ * pint - Prints all the values on the stack.
+ * @stack: Is a pointer to stack.
+ * @line_number: Is the number of line.
 */
 
 void pint(stack_t **stack, unsigned int line_number)

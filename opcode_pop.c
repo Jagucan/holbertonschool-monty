@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- * 
- * 
- * 
+ * pall - Removes the top element of the stack.
+ * @stack: Is a pointer to stack.
+ * @line_number: Is the number of line.
 */
 
 void pop(stack_t **stack, unsigned int line_number)

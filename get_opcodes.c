@@ -1,9 +1,8 @@
 #include "monty.h"
 
 /**
- * get_opcodes - Select the corret function.
+ * get_opcodes - Select the corret opcode.
  * @op: Is the opcode.
- * Return: Return a pointer.
 */
 
 void get_opcodes(char *op, stack_t **stack, unsigned int line_number)

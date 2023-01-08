@@ -1,10 +1,11 @@
 #include "monty.h"
 
 /**
- *
- * 
- * 
-*/
+ *main - main of The monty program.
+ *@argc: Is the number of arguments.
+ *@argv: Is the arguments.
+ *Return: Return int.
+ */
 
 int main(int argc, char **argv)
 {
@@ -13,19 +14,19 @@ int main(int argc, char **argv)
 	char *buff = NULL;
 	size_t size = 0;
 	ssize_t argument;
-	unsigned int line_number = 1;
+	unsigned int line_number;
 	stack_t *stack = NULL;
 
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
-		exit(EXIT_FAILURE);
+		return (EXIT_FAILURE);
 	}
 	file = fopen(argv[1], "r");
 	if (!file)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		exit(EXIT_FAILURE);
+		return (EXIT_FAILURE);
 	}
 
 	buffer = (char *) malloc(sizeof(char *) * size);
@@ -46,18 +47,19 @@ int main(int argc, char **argv)
 	if (argument == -1)
 		return(-1);
 
-	while (argument != -1)
+	for (line_number = 1; argument != -1; line_number++)
 	{
 		buff = strtok(buffer, " \t\n");
 		if (!buff)
-			break;
-
+		{
+			argument = getline(&buffer, &size, file);
+			continue;
+		}
 		get_opcodes(buff, &stack, line_number);
 		argument = getline(&buffer, &size, file);
-		line_number++;
-		continue;
+		
 	}
 	free(buffer);
 	fclose(file);
-	return (EXIT_SUCCESS);
+	return (argument);
 }
