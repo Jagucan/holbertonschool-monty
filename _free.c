@@ -16,7 +16,7 @@ void _free(stack_t **stack)
 			node = node->next;
 			free(node->prev);
 		}
-		
+
 		free(node);
 		break;
 	}

@@ -10,8 +10,7 @@
 int main(int argc, char **argv)
 {
 	FILE *file;
-	char *buffer = NULL;
-	char *buff = NULL;
+	char *buffer = NULL, *buff = NULL;
 	size_t size = 0;
 	ssize_t argument;
 	unsigned int line_number;
@@ -28,25 +27,13 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		return (EXIT_FAILURE);
 	}
-
 	buffer = (char *) malloc(sizeof(char *) * size);
 	if (!buffer)
 	{
 		fprintf(stderr, "Error: malloc failed");
 		exit(EXIT_FAILURE);
 	}
-
-	buff = (char *) malloc(sizeof(char *) * size);
-	if (!buff)
-	{
-		fprintf(stderr, "Error: malloc failed");
-		exit(EXIT_FAILURE);
-	}
-
 	argument = getline(&buffer, &size, file);
-	if (argument == -1)
-		return(-1);
-
 	for (line_number = 1; argument != -1; line_number++)
 	{
 		buff = strtok(buffer, " \t\n");
@@ -57,7 +44,6 @@ int main(int argc, char **argv)
 		}
 		get_opcodes(buff, &stack, line_number);
 		argument = getline(&buffer, &size, file);
-		
 	}
 	free(buffer);
 	fclose(file);
