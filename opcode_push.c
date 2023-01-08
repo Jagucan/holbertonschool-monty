@@ -18,32 +18,27 @@ void push(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "Error: malloc failed");
 		exit(EXIT_FAILURE);
 	}
-
 	buffer = strtok(NULL, " \t\n");
 	if (!buffer)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-
 	n = atoi(buffer);
 	if (_strspn(buffer, "0123456789+-") != _strlen(buffer))
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-
 	n_node = (stack_t *) malloc(sizeof(stack_t));
 	if (!n_node)
 	{
 		fprintf(stderr, "Error: malloc failed");
 		exit(EXIT_FAILURE);
 	}
-
 	n_node->n = n;
 	n_node->prev = NULL;
 	n_node->next = *stack;
-
 	if (*stack)
 	{
 		(*stack)->prev = n_node;
