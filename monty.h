@@ -50,6 +50,7 @@ void nop(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 //void sub(stack_t **stack, unsigned int line_number);
 //void div(stack_t **stack, unsigned int line_number);
+void _free(stack_t *stack);
 
 unsigned int _strspn(char *s, char *accept);
 unsigned int _strlen(char *s);
