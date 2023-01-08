@@ -3,6 +3,7 @@
 /**
  * get_opcodes - Select the corret opcode.
  * @op: Is the opcode.
+ * @stack: Is a pointer to stack.
 */
 
 void get_opcodes(char *op, stack_t **stack, unsigned int line_number)
