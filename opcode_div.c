@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * div - Div the top two elements of the stack.
+ * _div - Div the top two elements of the stack.
  * @stack: Is a pointer to stack.
  * @line_number: Is the number of line.
 */
 
-void div(stack_t **stack, unsigned int line_number)
+void _div(stack_t **stack, unsigned int line_number)
 {
 	stack_t *node = *stack;
 
