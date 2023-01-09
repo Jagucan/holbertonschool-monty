@@ -6,7 +6,7 @@
  * @line_number: Is the number of line.
 */
 
-void nop(__attribute__((unused))stack_t **stack, 
+void nop(__attribute__((unused))stack_t **stack,
 __attribute__((unused))unsigned int line_number)
 {
 	(void) stack;

@@ -22,6 +22,7 @@ void get_opcodes(char *op, stack_t **stack, unsigned int line_number)
 	};
 
 	int i;
+
 	for (i = 0; ops[i].opcode; i++)
 	{
 		while (_strcmp(op, ops[i].opcode) == 0)
