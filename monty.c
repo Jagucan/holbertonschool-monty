@@ -1,17 +1,19 @@
 #include "monty.h"
+
 /**
  *main - main of The monty program.
  *@argc: Is the number of arguments.
  *@argv: Is the arguments.
  *Return: Return int.
 */
+
 int main(int argc, char **argv)
 {
 	FILE *file;
 	char *buffer = NULL, *buff = NULL;
 	size_t size = 0;
-	ssize_t argument;
-	unsigned int line_number;
+	ssize_t argument = 0;
+	unsigned int line_number = 0;
 	stack_t *stack = NULL;
 
 	if (argc != 2)

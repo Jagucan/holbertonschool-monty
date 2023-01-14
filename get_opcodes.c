@@ -19,9 +19,10 @@ void get_opcodes(char *op, stack_t **stack, unsigned int line_number)
 		{"swap", swap},
 		{"mul", mul},
 		{"div", _div},
+		{NULL, NULL}
 	};
 
-	int i;
+	int i = 0;
 
 	for (i = 0; ops[i].opcode; i++)
 	{
@@ -36,4 +37,3 @@ void get_opcodes(char *op, stack_t **stack, unsigned int line_number)
 	fprintf(stderr, "L%u: unknown instruction %s\n", line_number, op);
 	exit(EXIT_FAILURE);
 }
-
