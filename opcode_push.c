@@ -45,4 +45,5 @@ void push(stack_t **stack, unsigned int line_number)
 		n_node->next = *stack;
 	}
 	*stack = n_node;
+	free(buffer);
 }
