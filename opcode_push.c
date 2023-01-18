@@ -8,9 +8,9 @@
 
 void push(stack_t **stack, unsigned int line_number)
 {
-	char *buffer;
-	stack_t *n_node;
-	int n;
+	char *buffer = NULL;
+	stack_t *n_node = NULL;
+	int n = 0;
 
 	buffer = (char *) malloc(sizeof(char *));
 	if (!buffer)
